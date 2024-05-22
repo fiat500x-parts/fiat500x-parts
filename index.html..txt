@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiat 500X Parts</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        header img {
+            max-width: 100px;
+        }
+        .container {
+            padding: 20px;
+        }
+        .part {
+            border: 1px solid #444;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #2a2a2a;
+        }
+        .part h2 {
+            margin-top: 0;
+        }
+        .chat {
+            background-color: #2a2a2a;
+            border: 1px solid #444;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        .chat h2 {
+            margin-top: 0;
+        }
+        .contact {
+            margin-top: 20px;
+        }
+        footer {
+            background-color: #333;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Fiat_logo.svg" alt="Fiat Logo">
+        <h1>Fiat 500X Parts</h1>
+    </header>
+    <div class="container">
+        <div class="part">
+            <h2>Part Name 1</h2>
+            <p>Condition: New</p>
+            <p>Quantity: 5</p>
+            <p>Description: Detailed information about Part Name 1.</p>
+        </div>
+        <div class="part">
+            <h2>Part Name 2</h2>
+            <p>Condition: Used</p>
+            <p>Quantity: 2</p>
+            <p>Description: Detailed information about Part Name 2.</p>
+        </div>
+        <!-- Add more parts as needed -->
+        
+        <div class="chat">
+            <h2>Chat</h2>
+            <div id="chat-box" style="height: 200px; overflow-y: scroll; background-color: #1a1a1a; border: 1px solid #444; padding: 10px;">
+                <!-- Chat messages will appear here -->
+            </div>
+            <input type="text" id="chat-input" placeholder="Type a message..." style="width: calc(100% - 22px); padding: 10px; margin-top: 10px;">
+            <button onclick="sendMessage()" style="padding: 10px; margin-top: 10px; background-color: #444; color: #fff; border: none;">Send</button>
+        </div>
+        
+        <div class="contact">
+            <h2>Contact Information</h2>
+            <p>Email: youremail@example.com</p>
+            <p>Phone: +1234567890</p>
+        </div>
+    </div>
+    <footer>
+        &copy; 2024 Fiat 500X Parts
+    </footer>
+
+    <script>
+        function sendMessage() {
+            var input = document.getElementById("chat-input");
+            var message = input.value;
+            if (message.trim() !== "") {
+                var chatBox = document.getElementById("chat-box");
+                var newMessage = document.createElement("div");
+                newMessage.textContent = message;
+                chatBox.appendChild(newMessage);
+                input.value = "";
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }
+        }
+    </script>
+</body>
+</html>
